@@ -4,12 +4,48 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    font-family:Arial, Helvetica, sans-serif
+}
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Từ tổng quan đến chi tiết
+*/
+
+/* 
+1. Vị trí
+2. Kích thước (wigth, hight)
+3. Màu sắc
+4. Kiểu dáng (kiểu chữ, hình tròn, hình vuông,...)
+*/
 #main {
 
 }
+#nav {
 
+
+}
+#nav li {
+    display: inline-block
+}
+#nav li a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+#nav .subnav {
+    display: none
+}
+#nav li:hover a { 
+    color:#000;
+    background-color: #ccc;
+}
 #header {
-
+    height: 46px;
+    background-color: #000
 }
 
 #slider {

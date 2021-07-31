@@ -1,0 +1,11 @@
+/* .container div div{
+    color: red;
+} */
+
+/* Biến toàn cục, lớp giả */
+:root {
+    --test-color: orange;
+}
+h1{
+    color: var(--test-color);
+}
