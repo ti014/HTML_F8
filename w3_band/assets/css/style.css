@@ -8,6 +8,7 @@ html {
     font-family:Arial, Helvetica, sans-serif
 }
 /* 
+Cách để có thể build một trang web:
 1. Từ ngoài vào trong
 2. Từ trên xuống dưới
 3. Từ tổng quan đến chi tiết
@@ -20,37 +21,97 @@ html {
 4. Kiểu dáng (kiểu chữ, hình tròn, hình vuông,...)
 */
 #main {
-
-}
-#nav {
-
-
-}
-#nav li {
-    display: inline-block
-}
-#nav li a {
-    color: #fff;
-    text-decoration: none;
-    line-height: 46px;
-    padding: 0 24px;
-    display: inline-block;
-}
-#nav .subnav {
-    display: none
-}
-#nav li:hover a { 
-    color:#000;
-    background-color: #ccc;
+    
 }
 #header {
+    /* header vẫn đang là layer đè trên slider */
+    position: fixed; /* cho thanh header luôn bám sát lên trên trang */
     height: 46px;
-    background-color: #000
+    background-color: #000;
+    /* Đoạn này là để set vị trí trên cùng, căn trái/phải */
+    width: 100%;
+    /* top: 0;
+    right: 0;
+    left: 0; */
+}
+#nav{
+    /*Do thẻ <ul> có tính chất block, nên nó sẽ chiếm hết chiều ngang của thẻ cha chứa nó */
+    /* display: inline-block có nghĩa là nội dung đến đâu thì hộp dài đến đó.
+     Vị trí: từ thẻ Home ==> More */
+    display: inline-block;
+}
+#nav,.subnav{
+    list-style-type: none;
+
+}
+#nav >li{ 
+     display:inline-block;
+}    
+#nav li{
+    position: relative;
+}
+#nav>li> a{
+    color: #fff;
+    text-transform: uppercase;/* Viết hoa */
 }
 
+#nav li a{
+    color: #fff;
+    text-decoration: none;
+    line-height: 46.4px;
+    padding: 0 24px;
+    display: block;
+    
+}
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav> li:hover> a,
+#nav .subnav li:hover a{
+    color: black;
+    background-color: #ccc;
+    }
+#nav .subnav{
+    display: none; 
+    min-width: 160px;
+    top:100%;
+    left: 0;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#nav .subnav a{
+    color:black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+#header .search-btn{
+    /* Vùng khung bao quanh icon kính lúp*/
+    float: right;
+    padding: 0px 21px;
+    cursor: pointer;  /* tạo con trỏ hình bàn tay khi di chuột vào ô tìm kiếm */
+}
+#header .search-btn:hover {
+    /* Trỏ chuột vào icon kính lúp là sẽ có màu đỏ */
+    background-color: #f44336!important;
+   }
+#header .search-icon{
+    /* icon kính lúp */
+    color:#fff;
+    font-size: 20px;
+    line-height: 46px   ;
+}
+   
 #slider {
-    min-height: 500px;
-    background-color: #grey;
+    
+    /* min-height: kích thước chiều cao tối thiểu;
+    min-height: 500px; 
+    background-color: #333;
+    margin-down: 46px; */
 }
 
 #content {
