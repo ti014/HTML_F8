@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 html {
-    font-family:Arial, Helvetica, sans-serif
+    font-family: "Lato", sans-serif;
 }
 /* 
 Cách để có thể build một trang web:
@@ -28,11 +28,11 @@ Cách để có thể build một trang web:
     position: fixed; /* cho thanh header luôn bám sát lên trên trang */
     height: 46px;
     background-color: #000;
-    /* Đoạn này là để set vị trí trên cùng, căn trái/phải */
-    width: 100%;
-    /* top: 0;
+    /* width: 100%; cho 100 ngang */
+    top: 0;
+    left: 0;
     right: 0;
-    left: 0; */
+    z-index: 1;
 }
 #nav{
     /*Do thẻ <ul> có tính chất block, nên nó sẽ chiếm hết chiều ngang của thẻ cha chứa nó */
@@ -107,17 +107,66 @@ Cách để có thể build một trang web:
 }
    
 #slider {
-    
-    /* min-height: kích thước chiều cao tối thiểu;
-    min-height: 500px; 
-    background-color: #333;
-    margin-down: 46px; */
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%; /*50% chiều ngang của chính nó*/ 
+    background: url("/w3_band/assets/img/chicago.jpg") top center / cover no-repeat;
+
+}
+#slider .text-content{
+    position: absolute;
+    color: #fff;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* Cách căn giữa lề khác
+    width: 100%;
+    right: 0;
+    left: 0;*/
+}
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+#slider .text-description{
+        font-weight: bolder;
+    font-size: 15px;
+    margin-top: 25px;
 }
 
 #content {
 
 }
+#content .content-section{
+    width: 800px;
+    /* padding: 64px 16px; */
+    padding-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#content .section-heading{
+    text-align: center!important;
+    padding-top: 64px;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 15px;
+    letter-spacing: 4px;  
 
+}
+#content .section-sub-heading{
+    text-align: center!important;
+    font-size:15px;
+    margin-top: 15px;
+    opacity: 60%;
+}
+#content .about-text{
+    font-size:15px;
+    margin-top: 15px;
+    text-align: justify;
+    line-height: 1.5;
+    
+}
 #footer {
 
 }
